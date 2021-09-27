@@ -62,7 +62,7 @@ body{
 
 .menu{
     position: fixed;
-    top: 23vh;
+    top: 30px;
     right: 10px;
     width: 35px;
     height: 30px;
@@ -109,9 +109,9 @@ body{
             }
 
             @media screen and (max-width:768px) {
-                padding: .6rem 0;
-            }
+                display: none;
 
+            }
         }
 
         @media screen and (max-width:768px) {

@@ -84,6 +84,7 @@ body {
 @media screen and (max-width: 768px) {
   .header .top-header p {
     padding: 0.6rem 0;
+    display: none;
   }
 }
 @media screen and (max-width: 768px) {
