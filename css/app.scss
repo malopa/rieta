@@ -18,34 +18,51 @@
     box-sizing: border-box;
 }
 
-.show{
-    display: flex;
-}
+
 
 .mobile{
     display: none;
-    position: absolute;
-    top: 25vh;
+    position: fixed;
+    top: 11vh;
     left: 0;
     width: 70%;
     background: $bottom-footer;
-    z-index: 12;
+    z-index: 20;
+    transform: translateX(0vw);
+    transition: transform 1000ms ease-in-out, display 200ms ease-in-out;
+
+    &:active{
+        transform: translateX(0vw);
+    }
+
     nav{
+        width:100%;
         ul{
             list-style: none;
             display: flex;
             flex-direction: column;
+            width:100%;
 
             li{
+                width:100%;
                 a{
                     padding: 1rem;
                     display: block;
+                    width:100%;
                     text-decoration: none;
                     color: $white-color;
+                }
+
+                div{
+                    display:none;
                 }
             }
         }
     }
+}
+
+.show{
+    display: flex;
 }
 
 body{
@@ -62,8 +79,8 @@ body{
 
 .menu{
     position: fixed;
-    top: 40px;
-    right: 10px;
+    top: 30px;
+    right: 15px;
     width: 35px;
     height: 30px;
     display: none;
@@ -71,10 +88,12 @@ body{
     justify-content: space-around;
     align-items: center;
     z-index: 20;
+    cursor: pointer;
 
     .line{
         width: 100%;
-        height: 2.5px;
+        height: 4px;
+        cursor: pointer;
         background: #000;
         border-radius: 20px;
     }
@@ -119,6 +138,8 @@ body{
               flex-direction: column;
               justify-content: center;
               align-items: center;
+              background:red;
+              display: none;
         }
     }
 
@@ -155,14 +176,19 @@ body{
                 margin-left: 1rem;
                 h1{
                     font-size: 18px;
+                    font-weight: bold;
                     @media screen and (max-width:768px){
-                        font-size: 16px;
+                        font-size: 14px;
 
                      }
                 }
                 h3{
                     font-size: 14px;
                     font-style: italic;
+                    @media screen and (max-width:768px) {
+                        font-weight: 12px;
+                    }
+
                 }
             }
 
@@ -296,7 +322,7 @@ body{
                 top: -80px;
 
                 @media screen and (max-width:768px) {
-                    top: 20px;
+                    top: -15px;
 
                 }
             }
@@ -305,7 +331,7 @@ body{
                 top: -80px;
 
                 @media screen and (max-width:768px) {
-                    top: 290px;
+                    top: 300px;
 
                 }
             }
@@ -317,9 +343,9 @@ body{
                 }
             }
 
-            &:nth-child(2){
+            &:nth-child(3){
                 @media screen and (max-width:768px) {
-                    top: 300px;
+                    top: 200px;
 
                 }
             }
@@ -332,7 +358,7 @@ body{
                 border-radius: 50%;
                 position: absolute;
                 top: -65px;
-                left: 30%;
+                left: 33%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -346,8 +372,10 @@ body{
             @media screen and (max-width:768px) {
                 margin: 1rem 0;
                 width: 300px;
-                min-height: 300px;
+                height:170px;
+                // min-height: 300px;
                 top:0px;
+                font-size: 14px;
             }
         }
 
@@ -355,8 +383,7 @@ body{
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            // background: red;
-            height: 100vh;
+            min-height: 100vh;
 
         }
     }
@@ -389,6 +416,14 @@ body{
             color: $white-color;
             font-weight: bold;
             cursor: pointer;
+            transform: scale(1.04);
+            transition: background 150ms ease-in-out, transform 150ms ease-in-out,color 150ms ease-in-out;
+
+            &:hover{
+                color:$footer-color;
+                background: $secondary-color;
+                transform: scale(1);
+            }
         }
 
         @media screen and (max-width:768px) {
@@ -419,7 +454,6 @@ body{
         display: flex;
         justify-content: space-around;
         padding: 4rem 2rem;
-
     }
 
     .content{
@@ -428,8 +462,10 @@ body{
         display: flex;
         justify-content: space-around;
         padding: 4rem 2rem;
+        align-items: center;
 
         .title{
+            z-index: 2;
             h1{
                 font-size: 48px;
                 color: $white-color;
@@ -685,6 +721,9 @@ body{
        
     }
 
+    @media screen and (max-width:768px){
+        padding-top: 5rem;        
+    }
 }
 
 
